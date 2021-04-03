@@ -39,9 +39,10 @@ const workout = () => {
   console.log('Do you want to practice?')
   let end = true;
   while (end) {
-    const question = console.log(commitString());
-    const answer = readlineSync.question('');
-    if (question === answer) {
+    const question = commitString();
+    console.log(question);
+    const answer = readlineSync.question();
+    if (String(question) === String(answer)) {
       console.log('Congratulate!');
     } else if (answer === 'q') {
       end = false;
